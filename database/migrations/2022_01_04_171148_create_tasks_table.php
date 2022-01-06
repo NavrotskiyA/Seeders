@@ -17,10 +17,9 @@ class CreateTasksTable extends Migration
             $table->id();
             $table->unsignedBigInteger('creator_id')->unique();
             $table->char('title',255);
-            $table->string('content');
+            $table->text('content');
             $table->unsignedBigInteger('status_id');
-            $table->timestamp('created_at');
-            $table->timestamp('updated_at');
+            $table->timestamps();
 
             $table->foreign('creator_id')->references('id')->on('users');
         });

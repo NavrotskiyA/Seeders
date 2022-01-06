@@ -17,8 +17,7 @@ class CreateLabelsTable extends Migration
             $table->id();
             $table->char('name', 255);
             $table->char('color', 255);
-            $table->timestamp('created_at');
-            $table->timestamp('updated_at');
+            $table->timestamps();
         });
     }
 
