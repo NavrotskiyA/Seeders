@@ -25,7 +25,7 @@ class TaskStatusSeeder extends Seeder
             'updated_at' => now()
         ]);
         DB::table('statuses')->insert([
-            'name' => 'to do',
+            'name' => 'done',
             'created_at' => now(),
             'updated_at' => now()
         ]);

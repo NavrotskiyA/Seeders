@@ -2,6 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Status;
+use App\Models\Task;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class UserController extends Controller
@@ -17,6 +20,7 @@ class UserController extends Controller
 //                    <input type="hidden" name="type" value="registration">
 //                    <input type="hidden" name="_token" value="'.csrf_token().'" />
 //                </form>';
+
         return 'Registration method';
     }
     public function auth()
@@ -31,8 +35,10 @@ class UserController extends Controller
 //                </form>';
         return 'Authorisation method';
     }
+
     public function show($id)
     {
+        
         return 'Hello user with id '.$id;
     }
     public function delete($id)

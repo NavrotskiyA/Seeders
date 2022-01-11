@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateTaskLabelTable extends Migration
+class LabelTaskTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,11 @@ class CreateTaskLabelTable extends Migration
      */
     public function up()
     {
-        Schema::create('task_label', function (Blueprint $table) {
+        Schema::create('label_task', function (Blueprint $table) {
             $table->bigInteger('task_id')->unsigned();
             $table->bigInteger('label_id')->unsigned();
-            $table->foreign('task_id','Task_id_in_tasks')->references('id')->on('tasks');
-            $table->foreign('label_id','Label_id_in_labels')->references('id')->on('labels');
+            $table->foreign('task_id', 'Task_id_in_tasks')->references('id')->on('tasks');
+            $table->foreign('label_id', 'Label_id_in_labels')->references('id')->on('labels');
         });
     }
 
@@ -28,6 +28,6 @@ class CreateTaskLabelTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('task_label');
+        Schema::dropIfExists('label_task');
     }
 }
