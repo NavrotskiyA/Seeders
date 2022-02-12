@@ -47,9 +47,9 @@ class TaskController extends Controller
      */
     public function show($id)
     {
-//        $task = Task::query()->where('id',$id)->first();
-//        return $task->status->name."";
-        return "Task will show entity with id $id";
+        $task = Task::query()->where('id',$id)->first();
+        return $task->status->name;
+//        return "Task will show entity with id $id";
     }
 
     /**
